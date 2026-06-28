@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "orders": {
+      ".read": true,
+      ".write": true,
+      "$orderId": {
+        ".validate": "newData.hasChildren(['tableNo','items','total','status','placedAt'])"
+      }
+    },
+    "staff": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "menu": {
+      ".read": true,
+      ".write": "auth != null"
+    }
+  }
+}
